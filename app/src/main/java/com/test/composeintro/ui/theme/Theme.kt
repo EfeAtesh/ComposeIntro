@@ -33,7 +33,7 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
-@Composable
+@Composable // compose da kullanılacak
 fun ComposeIntroTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
@@ -43,7 +43,7 @@ fun ComposeIntroTheme(
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context) // lambda function in kotlin ??
         }
 
         darkTheme -> DarkColorScheme
